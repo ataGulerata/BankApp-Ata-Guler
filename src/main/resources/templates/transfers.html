@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Para Transferleri</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Para Transferleri</h2>
+    <a th:href="@{/transfers/create}" class="btn btn-primary">Yeni Transfer Yap</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Gonderen Hesap ID</th>
+            <th>Alici Hesap ID</th>
+            <th>Tutar</th>
+            <th>Tarih</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="transfer : ${transfers}">
+            <td th:text="${transfer.id}">1</td>
+            <td th:text="${transfer.fromAccountId}">1</td>
+            <td th:text="${transfer.toAccountId}">2</td>
+            <td th:text="${transfer.amount}">100.0</td>
+            <td th:text="${transfer.timestamp}">2024-07-18T12:34:56</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

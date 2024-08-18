@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hesap Bakiyesi</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Hesap Bakiyesi</h2>
+    <p th:text="'Bakiyeniz: ' + ${balance}">Bakiyeniz: 0.0</p>
+</div>
+</body>
+</html>

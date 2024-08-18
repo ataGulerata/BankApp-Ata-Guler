@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hesap Güncelle</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Hesap Güncelle</h2>
+    <form th:action="@{/accounts/update}" method="post" th:object="${account}">
+        <div class="form-group">
+            <label for="userId">Kullanıcı ID:</label>
+            <input type="text" id="userId" name="userId" class="form-control" th:field="*{userId}" readonly />
+        </div>
+        <div class="form-group">
+            <label for="accountType">Hesap Türü:</label>
+            <input type="text" id="accountType" name="accountType" class="form-control" th:field="*{accountType}" />
+        </div>
+        <div class="form-group">
+            <label for="balance">Bakiye:</label>
+            <input type="text" id="balance" name="balance" class="form-control" th:field="*{balance}" readonly />
+        </div>
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+    </form>
+</div>
+</body>
+</html>

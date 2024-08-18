@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hesaplar</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Hesaplar</h2>
+    <a th:href="@{/accounts/create}" class="btn btn-primary">Yeni Hesap Oluştur</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kullanıcı ID</th>
+            <th>Hesap Türü</th>
+            <th>Bakiye</th>
+            <th>İşlemler</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="account : ${accounts}">
+            <td th:text="${account.id}">1</td>
+            <td th:text="${account.userId}">1</td>
+            <td th:text="${account.accountType}">Vadesiz</td>
+            <td th:text="${account.balance}">1000.0</td>
+            <td>
+                <a th:href="@{'/accounts/update/' + ${account.id}}" class="btn btn-warning">Güncelle</a>
+                <a th:href="@{'/accounts/delete/' + ${account.id}}" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

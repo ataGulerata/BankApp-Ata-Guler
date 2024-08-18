@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Kayit Ol</h2>
+    <form th:action="@{/register}" method="post">
+        <div class="form-group">
+            <label for="username">Kullanici Adi:</label>
+            <input type="text" id="username" name="username" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="password">Sifre:</label>
+            <input type="password" id="password" name="password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Kayit Ol</button>
+    </form>
+</div>
+</body>
+</html>

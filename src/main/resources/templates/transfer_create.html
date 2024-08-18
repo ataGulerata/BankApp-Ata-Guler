@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Yeni Transfer</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Yeni Transfer Yap</h2>
+    <form th:action="@{/transfers/create}" method="post">
+        <div class="form-group">
+            <label for="fromAccountId">Gonderen Hesap ID:</label>
+            <input type="text" id="fromAccountId" name="fromAccountId" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="toAccountId">Alici Hesap ID:</label>
+            <input type="text" id="toAccountId" name="toAccountId" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="amount">Tutar:</label>
+            <input type="text" id="amount" name="amount" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Transfer Yap</button>
+    </form>
+</div>
+</body>
+</html>

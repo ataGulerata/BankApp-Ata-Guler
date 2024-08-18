@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Yeni Fatura Oluştur</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Yeni Fatura Oluştur</h2>
+    <form th:action="@{/bills}" method="post">
+        <div class="form-group">
+            <label for="accountId">Hesap ID:</label>
+            <input type="text" id="accountId" name="accountId" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="amount">Tutar:</label>
+            <input type="text" id="amount" name="amount" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="dueDate">Son Ödeme Tarihi:</label>
+            <input type="text" id="dueDate" name="dueDate" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Oluştur</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profil Yönetimi</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Profil Yonetimi</h2>
+    <form th:action="@{/profile}" method="post" th:object="${user}">
+        <div class="form-group">
+            <label for="username">Kullanici Adi:</label>
+            <input type="text" id="username" name="username" class="form-control" th:field="*{username}" readonly />
+        </div>
+        <div class="form-group">
+            <label for="password">Sifre:</label>
+            <input type="password" id="password" name="password" class="form-control" th:field="*{password}" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" th:field="*{email}" />
+        </div>
+        <button type="submit" class="btn btn-primary">Guncelle</button>
+    </form>
+</div>
+</body>
+</html>

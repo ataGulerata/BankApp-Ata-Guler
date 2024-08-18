@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hesap Hareketleri</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Hesap Hareketleri</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Hesap ID</th>
+            <th>Miktar</th>
+            <th>Tarih</th>
+            <th>Tur</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="transaction : ${transactions}">
+            <td th:text="${transaction.id}">1</td>
+            <td th:text="${transaction.accountId}">1</td>
+            <td th:text="${transaction.amount}">100.0</td>
+            <td th:text="${transaction.timestamp}">2024-07-18T12:34:56</td>
+            <td th:text="${transaction.type}">DEPOSIT</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

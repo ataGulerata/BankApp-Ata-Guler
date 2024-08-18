@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Faturalar</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Faturalar</h2>
+    <a th:href="@{/bills/create}" class="btn btn-primary">Yeni Fatura Oluştur</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Hesap ID</th>
+            <th>Tutar</th>
+            <th>Son Ödeme Tarihi</th>
+            <th>Durum</th>
+            <th>İşlem</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="bill : ${bills}">
+            <td th:text="${bill.id}">1</td>
+            <td th:text="${bill.accountId}">1</td>
+            <td th:text="${bill.amount}">100.0</td>
+            <td th:text="${bill.dueDate}">2024-07-18</td>
+            <td th:text="${bill.status}">Ödenmemiş</td>
+            <td>
+                <form th:action="@{/bills/pay}" method="post">
+                    <input type="hidden" th:value="${bill.id}" name="billId" />
+                    <button type="submit" class="btn btn-success">Öde</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
