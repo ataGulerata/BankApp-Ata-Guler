@@ -37,7 +37,7 @@ public class UserServiceImplTest {
         user = new User();
         user.setId(1L);
         user.setUsername("testuser");
-        user.setPassword("password123");
+        user.setPassword("encodedPassword");
         user.setEmail("testuser@example.com");
     }
 
